@@ -19,6 +19,7 @@ Rescue Drive ist ein autonomes Fahrzeug, das für Rettungseinsätze konzipiert w
 - Alex Guarino: Hardware-Integration & Sensoren
 - Ivan Federspieler: Fahrzeugmechanik & Aktuatoren
 - Lorik Bajgora: Qualitätssicherung & Dokumentation
+- [Robocoders (Lorik Bajgora's 2.Account): Spezifisch für GitHub zuständig]
 
 ## Technologie-Stack
 
