@@ -1,49 +1,49 @@
 # Rescue Drive Frontend
 
-This directory contains the frontend code for the Rescue Drive project, a self-driving rescue vehicle.
+Dieses Verzeichnis enthält den Frontend-Code für das Rescue Drive Projekt, ein selbstfahrendes Rettungsfahrzeug.
 
-## Project Overview
+## Projektübersicht
 
-Rescue Drive is an autonomous vehicle designed for rescue operations. The frontend provides a user interface for monitoring and controlling the vehicle.
+Rescue Drive ist ein autonomes Fahrzeug, das für Rettungseinsätze konzipiert wurde. Das Frontend bietet eine Benutzeroberfläche zur Überwachung und Steuerung des Fahrzeugs.
 
-## Features
+## Funktionen
 
-- Real-time vehicle status monitoring
-- Control panel for manual override
-- Mission planning and execution interface
-- Sensor data visualization
+- Echtzeit-Überwachung des Fahrzeugstatus
+- Bedienfeld für manuelle Übersteuerung
+- Schnittstelle für Missionsplanung und -ausführung
+- Visualisierung von Sensordaten
 
-## Team Members
+## Teammitglieder
 
-- Felix Hinteregger: Frontend Web Development & User Experience
-- Fabian Leimegger: Project Management & Coordination
+- Felix Hinteregger: Frontend-Webentwicklung & Benutzererfahrung
+- Fabian Leimegger: Projektmanagement & Koordination
 
-## Technology Stack
+## Technologie-Stack
 
 - HTML5, CSS3, JavaScript
-- React.js for dynamic UI components
-- Redux for state management
-- Responsive design for mobile and desktop interfaces
+- React.js für dynamische UI-Komponenten
+- Redux für Zustandsverwaltung
+- Responsives Design für mobile und Desktop-Schnittstellen
 
-## Getting Started
+## Erste Schritte
 
-1. Install dependencies: `npm install`
-2. Start the development server: `npm start`
-3. Open `http://localhost:3000` in your browser
+1. Abhängigkeiten installieren: `npm install`
+2. Entwicklungsserver starten: `npm start`
+3. Öffnen Sie `http://localhost:3000` in Ihrem Browser
 
-## Project Structure
+## Projektstruktur
 
-- `/src`: Source code
-- `/public`: Static assets
-- `/components`: Reusable React components
-- `/pages`: Main application pages
-- `/styles`: CSS and styling files
-- `/utils`: Utility functions and helpers
+- `/src`: Quellcode
+- `/public`: Statische Assets
+- `/components`: Wiederverwendbare React-Komponenten
+- `/pages`: Hauptanwendungsseiten
+- `/styles`: CSS- und Styling-Dateien
+- `/utils`: Hilfsfunktionen und Helfer
 
-## Contributing
+## Mitwirken
 
-Please refer to the main project README for contribution guidelines.
+Bitte beachten Sie die Hauptprojekt-README für Richtlinien zur Mitarbeit.
 
-## License
+## Lizenz
 
-This project is part of Rescue Drive and is subject to the same license as the main project.
+Dieses Projekt ist Teil von Rescue Drive und unterliegt der gleichen Lizenz wie das Hauptprojekt.

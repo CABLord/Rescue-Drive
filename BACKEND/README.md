@@ -1,58 +1,58 @@
 # Rescue Drive Backend
 
-This directory contains the backend code for the Rescue Drive project, a self-driving rescue vehicle.
+Dieses Verzeichnis enthält den Backend-Code für das Rescue Drive Projekt, ein selbstfahrendes Rettungsfahrzeug.
 
-## Project Overview
+## Projektübersicht
 
-Rescue Drive is an autonomous vehicle designed for rescue operations. The backend handles data processing, vehicle control, and API endpoints for the frontend.
+Rescue Drive ist ein autonomes Fahrzeug, das für Rettungseinsätze konzipiert wurde. Das Backend verarbeitet Daten, steuert das Fahrzeug und stellt API-Endpunkte für das Frontend bereit.
 
-## Features
+## Funktionen
 
-- Vehicle control systems
-- Sensor data processing
-- API endpoints for frontend communication
-- Database management for mission logs and vehicle status
+- Fahrzeugsteuerungssysteme
+- Verarbeitung von Sensordaten
+- API-Endpunkte für die Frontend-Kommunikation
+- Datenbankverwaltung für Missionsprotokolle und Fahrzeugstatus
 
-## Team Members
+## Teammitglieder
 
-- Florian Firler: Backend & Web Services
-- Alex Guarino: Hardware Integration & Sensors
-- Ivan Federspieler: Vehicle Mechanics & Actuators
-- Lorik Bajgora: Quality Assurance & Documentation
+- Florian Firler: Backend & Webdienste
+- Alex Guarino: Hardware-Integration & Sensoren
+- Ivan Federspieler: Fahrzeugmechanik & Aktuatoren
+- Lorik Bajgora: Qualitätssicherung & Dokumentation
 
-## Technology Stack
+## Technologie-Stack
 
 - Python 3.x
-- Flask for API development
-- SQLAlchemy for database ORM
-- ROS (Robot Operating System) for vehicle control
-- OpenCV for image processing
+- Flask für API-Entwicklung
+- SQLAlchemy für Datenbank-ORM
+- ROS (Robot Operating System) für Fahrzeugsteuerung
+- OpenCV für Bildverarbeitung
 
-## Getting Started
+## Erste Schritte
 
-1. Set up a virtual environment: `python -m venv venv`
-2. Activate the virtual environment: `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows)
-3. Install dependencies: `pip install -r requirements.txt`
-4. Start the server: `python app.py`
+1. Virtuelle Umgebung einrichten: `python -m venv venv`
+2. Virtuelle Umgebung aktivieren: `source venv/bin/activate` (Linux/Mac) oder `venv\Scripts\activate` (Windows)
+3. Abhängigkeiten installieren: `pip install -r requirements.txt`
+4. Server starten: `python app.py`
 
-## Project Structure
+## Projektstruktur
 
-- `/api`: API endpoints and routes
-- `/models`: Database models
-- `/services`: Business logic and services
-- `/utils`: Utility functions and helpers
-- `/tests`: Unit and integration tests
+- `/api`: API-Endpunkte und Routen
+- `/models`: Datenbankmodelle
+- `/services`: Geschäftslogik und Dienste
+- `/utils`: Hilfsfunktionen und Helfer
+- `/tests`: Unit- und Integrationstests
 
-## Hardware Integration
+## Hardware-Integration
 
-- Raspberry Pi 4 (2GB RAM) for main processing
-- Various sensors: Ultrasonic, Color, Gyro, Laser distance
-- DC Motors and Servo motors for movement and actuation
+- Raspberry Pi 4 (2GB RAM) für Hauptverarbeitung
+- Verschiedene Sensoren: Ultraschall, Farbe, Gyroskop, Laserentfernung
+- DC-Motoren und Servomotoren für Bewegung und Betätigung
 
-## Contributing
+## Mitwirken
 
-Please refer to the main project README for contribution guidelines.
+Bitte beachten Sie die Hauptprojekt-README für Richtlinien zur Mitarbeit.
 
-## License
+## Lizenz
 
-This project is part of Rescue Drive and is subject to the same license as the main project.
+Dieses Projekt ist Teil von Rescue Drive und unterliegt der gleichen Lizenz wie das Hauptprojekt.
