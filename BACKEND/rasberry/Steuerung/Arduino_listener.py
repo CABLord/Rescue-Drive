@@ -1,3 +1,4 @@
+import threading
 
 from senttoServer import Sender
 class Ardiuno_listener(threading.Thread):
