@@ -1,0 +1,78 @@
+/* Styling für die Überschrift im Beschreibungsteil */
+.description h2 {
+    margin-top: 70px !important;
+    text-align: center;
+    color: #333;
+    margin: 40px 0 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling für den Beschreibungstext */
+.description p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 1.1em;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    border: 1px solid black; /* Schwarzer Rahmen um den Text */
+}
+
+/* Styling für den Zurück-Link */
+.description a {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    color: #4CAF50;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 150px;
+}
+
+.description a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .description h2 {
+        margin-top: 50px !important;
+        margin: 30px 0 15px 0;
+        font-size: 1.5em;
+    }
+
+    .description p {
+        padding: 15px;
+        font-size: 1em;
+        border-radius: 6px;
+    }
+
+    .description a {
+        margin-bottom: 100px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .description h2 {
+        margin-top: 30px !important;
+        margin: 20px 0 10px 0;
+        font-size: 1.2em;
+    }
+
+    .description p {
+        padding: 10px;
+        font-size: 0.9em;
+        border-radius: 4px;
+    }
+
+    .description a {
+        margin-bottom: 50px;
+        font-size: 0.9em;
+    }
+}
