@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -44,17 +44,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styles/login.css"> <!-- Eigene CSS-Datei -->
     <link rel="stylesheet" href="styles/global.css"> <!-- Eigene CSS-Datei -->
     <link rel="stylesheet" href="styles/footer.css"> <!-- Eigene CSS-Datei -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="w3-light-grey">
+<body>
 
     <!-- Menü einbinden -->
     <?php include 'html/menu.html'; ?>
 
     <!-- Login Container -->
     <div class="w3-content w3-padding" style="max-width:600px; margin-top: 100px;">
-        <div class="w3-card-4 w3-white w3-padding-16 w3-margin-top">
-            <h2 class="w3-center">Login</h2>
+        <div class="w3-card-4 w3-padding-16 w3-margin-top">
+            <h2 class="w3-center" style="color: #ffffff;">
+                Login <i class="fas fa-unlock-alt"></i> 
+            </h2>
+
+
 
             <!-- Fehlernachricht anzeigen -->
             <?php if (isset($error)): ?>
@@ -64,13 +69,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Login Formular -->
             <form method="POST" action="">
                 <div class="w3-container">
-                    <label for="username">Benutzername:</label>
+                    <label for="username" style="color: #ffffff;">Benutzername:</label>
                     <input type="text" id="username" name="username" class="w3-input w3-border w3-round input-full" required autocomplete="off">
 
-                    <label for="password">Passwort:</label>
+                    <label for="password" style="color: #ffffff;">Passwort:</label>
                     <input type="password" id="password" name="password" class="w3-input w3-border w3-round input-full" required>
 
-                    <input type="submit" value="Login" class="w3-button w3-green w3-round input-full">
+                    <input type="submit" value="Login" class="w3-button w3-blue w3-round input-full">
                 </div>
             </form>
         </div>

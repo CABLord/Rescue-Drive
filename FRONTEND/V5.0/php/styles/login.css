@@ -3,11 +3,15 @@
     max-width: 500px;
     margin: auto;
     padding: 20px;
+    background-color: #505759 !important; /* Dunkler Hintergrund */
+    color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Fehlernachricht im Login-Formular */
 .w3-text-red {
-    color: red;
+    color: #ff5252;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -15,10 +19,27 @@
 /* Einheitliche Größe für Inputs und Button */
 .input-full {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
     height: 40px;
     display: block;
-    margin: 10px auto; /* Zentriert die Felder */
+    margin: 10px auto;
+    background-color: #2a2a2a; /* Dunklere Eingabefelder */
+    border: 1px solid #3a3a3a;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+/* Blaue Buttons */
+.w3-button {
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.w3-button:hover {
+    background-color: #0d47a1;
 }
 
 /* Responsive Design */
