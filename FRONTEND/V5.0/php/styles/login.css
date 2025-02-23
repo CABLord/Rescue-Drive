@@ -1,0 +1,43 @@
+/* Login Form Container Anpassungen */
+.w3-card-4 {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Fehlernachricht im Login-Formular */
+.w3-text-red {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Einheitliche Größe für Inputs und Button */
+.input-full {
+    width: 100%;
+    max-width: 250px;
+    height: 40px;
+    display: block;
+    margin: 10px auto; /* Zentriert die Felder */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .w3-card-4 {
+        padding: 15px;
+    }
+
+    .input-full {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .w3-card-4 {
+        padding: 10px;
+    }
+
+    .input-full {
+        max-width: 150px;
+    }
+}
