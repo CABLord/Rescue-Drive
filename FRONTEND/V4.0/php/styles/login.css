@@ -12,9 +12,13 @@
     margin-bottom: 20px;
 }
 
-/* Breitere und höhere Eingabefelder */
-.w3-input {
-    width: 250px;   
+/* Einheitliche Größe für Inputs und Button */
+.input-full {
+    width: 100%;
+    max-width: 250px;
+    height: 40px;
+    display: block;
+    margin: 10px auto; /* Zentriert die Felder */
 }
 
 /* Responsive Design */
@@ -23,8 +27,8 @@
         padding: 15px;
     }
 
-    .w3-input {
-        width: 200px;
+    .input-full {
+        max-width: 200px;
     }
 }
 
@@ -33,7 +37,7 @@
         padding: 10px;
     }
 
-    .w3-input {
-        width: 150px;
+    .input-full {
+        max-width: 150px;
     }
 }

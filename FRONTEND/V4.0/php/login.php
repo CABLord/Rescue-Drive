@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="de">
 
 <head>
@@ -63,19 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Login Formular -->
             <form method="POST" action="">
-                <div class="w3-row-padding">
-                    <div class="w3-third w3-margin-bottom">
-                        <label for="username">Benutzername:</label>
-                        <input type="text" id="username" name="username" class="w3-input w3-border w3-round" required autocomplete="off">
-                    </div>
+                <div class="w3-container">
+                    <label for="username">Benutzername:</label>
+                    <input type="text" id="username" name="username" class="w3-input w3-border w3-round input-full" required autocomplete="off">
+
+                    <label for="password">Passwort:</label>
+                    <input type="password" id="password" name="password" class="w3-input w3-border w3-round input-full" required>
+
+                    <input type="submit" value="Login" class="w3-button w3-green w3-round input-full">
                 </div>
-                <div class="w3-row-padding">
-                    <div class="w3-third w3-margin-bottom">
-                        <label for="password">Passwort:</label>
-                        <input type="password" id="password" name="password" class="w3-input w3-border w3-round" required>
-                    </div>
-                </div>
-                <input type="submit" value="Login" class="w3-button w3-block w3-green w3-round">
             </form>
         </div>
     </div>
