@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: " . $_SESSION['location']);
         exit;
     } else {
-        $error = "Benutzername oder Passwort sind falsch."; // Fehlernachricht
+        $error = "Ungültige Anmeldedaten."; // Fehlernachricht
     }
 }
 ?>
@@ -55,11 +55,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Login Container -->
     <div class="w3-content w3-padding" style="max-width:600px; margin-top: 100px;">
         <div class="w3-card-4 w3-padding-16 w3-margin-top">
-            <h2 class="w3-center" style="color: #ffffff;">
-                Login <i class="fas fa-unlock-alt"></i> 
+            <h2 class="w3-center" style="color: #1976d2;">
+                Login <i class="fas fa-lock" style="font-size: 22px; width: 20px; height: 20px;"></i>
             </h2>
-
-
 
             <!-- Fehlernachricht anzeigen -->
             <?php if (isset($error)): ?>
@@ -69,13 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Login Formular -->
             <form method="POST" action="">
                 <div class="w3-container">
-                    <label for="username" style="color: #ffffff;">Benutzername:</label>
-                    <input type="text" id="username" name="username" class="w3-input w3-border w3-round input-full" required autocomplete="off">
+                    <input type="text" id="username" name="username" class="w3-input w3-border w3-round input-full" autocomplete="off" placeholder="Benutzername">
 
-                    <label for="password" style="color: #ffffff;">Passwort:</label>
-                    <input type="password" id="password" name="password" class="w3-input w3-border w3-round input-full" required>
+                    <!-- Passwortfeld mit Auge-Icon -->
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" class="w3-input w3-border w3-round input-full" placeholder="Passwort">
+                        <i class="fas fa-eye" id="togglePassword" style="color: #1976d2;"></i>
+                    </div>
 
-                    <input type="submit" value="Login" class="w3-button w3-blue w3-round input-full">
+                    <input type="submit" value="Login" class="w3-button w3-round input-full" style="background-color:#1976d2">
                 </div>
             </form>
         </div>
@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Footer einbinden -->
     <?php include 'html/footer.html'; ?>
 
+    <script src="jscript/login.js"></script>
 </body>
 
 </html>
