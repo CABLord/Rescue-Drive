@@ -14,12 +14,12 @@ html, body {
 
 /* Header Styling */
 header {
-    background-color: #1e1e1e;
+    background-color: #1e1e1e; /* Dunkler Hintergrund für den Header */
     padding: 15px 10px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #ffffff; /* Weiße Schrift */
 }
 
 /* Main Content */
@@ -35,12 +35,12 @@ main {
     padding: 12px 16px;
     font-size: 16px;
     background-color: #1e1e1e; /* Dunkler Hintergrund */
-    color: #ffffff;
+    color: #ffffff; /* Weiße Schrift */
     border-radius: 6px;
 }
 
 .w3-bar .w3-button:hover {
-    background-color: #1976d2; /* Blaue Akzentfarbe */
+    background-color: #1976d2 !important; /* Blaue Akzentfarbe */
 }
 
 /* Menüleiste Styling */
@@ -107,6 +107,10 @@ main {
     main {
         padding: 15px;
     }
+
+    .w3-bar .w3-button {
+        padding: 10px 12px; /* Etwas kleinere Buttons auf mittleren Geräten */
+    }
 }
 
 @media (max-width: 480px) {
@@ -117,5 +121,9 @@ main {
 
     main {
         padding: 10px;
+    }
+
+    .w3-bar .w3-button {
+        padding: 8px 10px; /* Kleinere Buttons auf kleinen Geräten */
     }
 }

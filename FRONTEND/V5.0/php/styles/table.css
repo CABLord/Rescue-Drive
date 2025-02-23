@@ -1,49 +1,38 @@
-/* table.css */
+/* Stile für die Tabellenzellen */
 table {
-    width: 70%;
+    background-color: #1e1e1e; /* Dunkler Hintergrund für die Tabelle */
+    width: 80%;
     margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd; /* Vertikale Linien hinzufügen */
 }
 
 th {
-    background-color: #4CAF50;
-    color: white;
+    padding: 15px;
+    text-align: center;
+    color: #1976d2;
+    border-bottom: 1px solid #1976d2; /* Dunkler Rand */
+    border-right: 1px solid #1976d2;
+    border-left: 1px solid #1976d2;
+    border-top: 1px solid #1976d2;
 }
 
-/* Zeilen abwechselnd einfärben */
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #1976d2; /* Dunkler Rand */
+    border-right: 1px solid #1976d2;
+    border-left: 1px solid #1976d2;
+    border-top: 1px solid #1976d2;
+}
+
+/* Nur die zweite Spalte nach links ausrichten */
+td:nth-child(2) {
+    text-align: left;
+}
+
+
+/* Abwechselnde Zeilenfarbe */
 tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    table {
-        width: 90%;
-    }
-
-    th, td {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    table {
-        width: 100%;
-    }
-
-    th, td {
-        padding: 10px;
-        font-size: 12px;
-    }
+    background-color: #2a2a2a; /* Etwas dunklerer Hintergrund für gerade Zeilen */
 }

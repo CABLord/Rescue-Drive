@@ -1,7 +1,7 @@
 <?php
 function formatDate($datetime) {
     $date = new DateTime($datetime);
-    return $date->format('d.m.Y | H:i');
+    return $date->format('d.m.Y H:i');
 }
 
 function checkLogin() {

@@ -1,18 +1,23 @@
 h2 {
     text-align: center;
-    color: #333;
+    color: #f5f5f5; /* Helles Weiß für die Überschrift */
     margin: 70px 0 20px 0 !important; /* Oberer Abstand von 40px, unterer Abstand von 20px */
+}
+
+.add-entry-btn-container {
+    text-align: center;
+    margin: 20px 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    h2 {
-        margin: 50px 0 15px 0 !important; /* Oberer Abstand von 50px, unterer Abstand von 15px für mittlere Bildschirme */
+    table {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     h2 {
-        margin: 30px 0 10px 0 !important; /* Oberer Abstand von 30px, unterer Abstand von 10px für kleine Bildschirme */
+        margin: 30px 0 10px 0;
     }
 }

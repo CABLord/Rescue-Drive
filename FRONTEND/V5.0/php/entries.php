@@ -8,7 +8,7 @@ $_SESSION['location'] = "index.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de"> 
 
 <head>
     <meta charset="UTF-8">
