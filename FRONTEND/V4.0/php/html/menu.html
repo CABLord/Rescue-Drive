@@ -1,3 +1,57 @@
+<<<<<<< HEAD:Control/V4.0/php/html/menu.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ResQ Drive</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles/footer.css"> <!-- Eigene CSS-Datei -->
+    <link rel="stylesheet" href="styles/global.css"> 
+    <script src="jscript/menu.js"></script> <!-- Einbindung des externen JS-Files -->
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="index.php" class="w3-bar-item w3-button"><b>ResQ</b> Drive</a>
+            
+            <!-- Hamburger Button für Mobilgeräte -->
+            <a href="javascript:void(0);" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleMenu()">
+                ☰
+            </a> 
+
+            <!-- Navigation für große Bildschirme -->
+            <div class="w3-right w3-hide-small" id="menuLinks">
+                <a href="aboutus.php" class="w3-bar-item w3-button">Über uns</a>
+                <a href="carinfo.php" class="w3-bar-item w3-button">Unser Produkt</a>
+                <?php if($_SESSION["isLoggedIn"] == 1) : ?>
+                    <a href="control.php" class="w3-bar-item w3-button">Steuerung</a>
+                    <a href="logger.php" class="w3-bar-item w3-button">Logger</a>
+                    <a href="entries.php" class="w3-bar-item w3-button">Tagebuch</a>
+                    <a href="logout.php" class="w3-bar-item w3-button">Logout</a>
+                <?php else : ?>
+                    <a href="login.php" class="w3-bar-item w3-button">Login</a>
+                <?php endif; ?>
+            </div>
+
+            <!-- Navigation für kleine Bildschirme -->
+            <div id="mobileMenu" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                <a href="aboutus.php" class="w3-bar-item w3-button">Über uns</a>
+                <a href="carinfo.php" class="w3-bar-item w3-button">Unser Produkt</a>
+                <?php if($_SESSION["isLoggedIn"] == 1) : ?>
+                    <a href="control.php" class="w3-bar-item w3-button">Steuerung</a>
+                    <a href="logger.php" class="w3-bar-item w3-button">Logger</a>
+                    <a href="entries.php" class="w3-bar-item w3-button">Tagebuch</a>
+                    <a href="logout.php" class="w3-bar-item w3-button">Logout</a>
+                <?php else : ?>
+                    <a href="login.php" class="w3-bar-item w3-button">Login</a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+=======
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
       <a href="index.php" class="w3-bar-item w3-button"><b>ResQ</b> Drive</a>
@@ -7,7 +61,7 @@
           ☰
       </a>
 
-      <!-- Navigation für große Bildschirme --> 
+      <!-- Navigation für große Bildschirme -->
       <div class="w3-right w3-hide-small" id="menuLinks">
           <a href="aboutus.php" class="w3-bar-item w3-button">Über uns</a>
           <a href="carinfo.php" class="w3-bar-item w3-button">Unser Produkt</a>
@@ -36,3 +90,4 @@
       </div>
   </div>
 </div>
+>>>>>>> 32f85061887640e2b29df9a536e8cc9ce519f6c1:FRONTEND/V4.0/php/html/menu.html
