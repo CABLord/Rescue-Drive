@@ -14,7 +14,7 @@ $_SESSION['location'] = "index.php";?>
     <link rel="stylesheet" href="styles/global.css"> 
 </head>
 <body>
-
+ 
 <!-- Menü einbinden -->
 <?php include 'html/menu.html'; ?>
 
@@ -40,6 +40,8 @@ $_SESSION['location'] = "index.php";?>
 
 <!-- Footer einbinden -->
 <?php include 'html/footer.html'; ?>
+
+<script src="jscript/menu.js"></script>
 
 </body>
 </html>

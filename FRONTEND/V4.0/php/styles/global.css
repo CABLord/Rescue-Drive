@@ -36,7 +36,7 @@ main {
 }
 
 /* Menü-Button Styling */
-.w3-bar .w3-button {
+.w3-bar .w3-button { 
     padding: 12px 16px;
     font-size: 16px;
 }
