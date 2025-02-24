@@ -13,6 +13,28 @@ $_SESSION['location'] = "index.php"; ?>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="styles/footer.css"> <!-- Eigene CSS-Datei -->
   <link rel="stylesheet" href="styles/global.css">
+  <style>
+    .map-container {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      padding-bottom: 75%;
+      /* Verhältnis 4:3 */
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -34,23 +56,22 @@ $_SESSION['location'] = "index.php"; ?>
     <!-- Google Maps Location -->
     <div class="w3-container">
       <h3>Unser Standort</h3>
-      <iframe
-        width="100%"
-        height="450px"
-        style="border:0"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2599.9302218845046!2d11.646225076177869!3d46.72015447112227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4778050d856c4db1%3A0x6fb001a274b91114!2sOberschulen%20Jakob%20Philipp%20Fallmerayer!5e1!3m2!1sde!2sit!4v1740313961513!5m2!1sde!2sit">
+      <div class="map-container">
+        <iframe
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2735.2688689119304!2d11.646225075661578!3d46.720158148770125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4778050d856c4db1%3A0x6fb001a274b91114!2sOberschulen%20Jakob%20Philipp%20Fallmerayer!5e0!3m2!1sde!2sit!4v1740391233017!5m2!1sde!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
+      </div>
     </div>
 
     <!-- End page content -->
   </div>
-  
+
   <!-- Footer einbinden -->
   <?php include 'html/footer.html'; ?>
-  
+
 </body>
 
 </html>
