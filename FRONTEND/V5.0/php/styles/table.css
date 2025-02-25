@@ -1,9 +1,13 @@
 /* Stile für die Tabelle */
 .table-wrapper {
     display: flex;
-    justify-content: center; /* Tabelle in der Mitte zentrieren */
+    justify-content: center;
     width: 100%;
+    overflow-y: auto; /* Vertikales Scrollen */
+    max-height: 600px; /* Maximale Höhe der Tabelle */
+    min-height: 400px; /* Mindesthöhe setzen, damit mehrere Zeilen sichtbar sind */
 }
+
 
 table {
     background-color: #1e1e1e;

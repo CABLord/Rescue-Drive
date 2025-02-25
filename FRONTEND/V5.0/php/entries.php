@@ -9,7 +9,7 @@ $_SESSION['location'] = "index.php";
 
 <!DOCTYPE html>
 <html lang="de">
-
+ 
 <head>
     <meta charset="UTF-8">
     <title>Tagebuch</title>
