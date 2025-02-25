@@ -8,7 +8,7 @@ $_SESSION['location'] = "index.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="de"> 
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -29,49 +29,53 @@ $_SESSION['location'] = "index.php";
     <?php include 'html/menu.html'; ?>
 
     <h2>Tagebucheinträge</h2>
-    <table>
-        <tr>
-            <th>Eingetragen von</th>
-            <th>Betroffener</th>
-            <th>Titel</th>
-            <th>Datum</th> <!-- Datum jetzt vor Beschreibung -->
-            <th>Beschreibung</th> <!-- Beschreibung jetzt nach Datum -->
-            <th>Bearbeiten</th>
-            <th>Löschen</th>
-        </tr>
-        <?php foreach ($entries as $entry): ?>
-            <tr>
-                <td><?= htmlspecialchars($entry['uploader']); ?></td>
-                <td><?= htmlspecialchars($entry['coworker']); ?></td>
-                <td><?= htmlspecialchars($entry['title']); ?></td>
-                <td><?= htmlspecialchars(formatDate($entry['date'])); ?></td> <!-- Datum vor Beschreibung -->
-                <td>
-                    <!-- Beschreibung-Button -->
-                    <a href="description.php?entry_id=<?= htmlspecialchars($entry['entry_id']); ?>" class="button-common description-btn">
-                        <i class="button-icon fas fa-file-alt"></i>
-                    </a>
-                </td> <!-- Beschreibung nach Datum -->
-                <td>
-                    <!-- Bearbeiten-Button mit Stiftsymbol -->
-                    <form method="GET" action="edit_entry.php" style="display:inline;">
-                        <input type="hidden" name="entry_id" value="<?= htmlspecialchars($entry['entry_id']); ?>">
-                        <button type="submit" name="edit_entry" class="button-common edit-btn">
-                            <i class="button-icon fas fa-edit"></i>
-                        </button>
-                    </form>
-                </td>
-                <td>
-                    <!-- Löschen-Button mit Mülltonne-Symbol -->
-                    <form method="POST" action="delete_entry.php" style="display:inline;">
-                        <input type="hidden" name="entry_id" value="<?= htmlspecialchars($entry['entry_id']); ?>">
-                        <button type="submit" name="delete_entry" class="button-common delete-btn">
-                            <i class="button-icon fas fa-trash"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Eingetragen von</th>
+                    <th>Betroffener</th>
+                    <th>Titel</th>
+                    <th>Datum</th>
+                    <th>Beschreibung</th>
+                    <th>Bearbeiten</th>
+                    <th>Löschen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($entries as $entry): ?>
+                    <tr>
+                        <td data-label="Eingetragen von"><?= htmlspecialchars($entry['uploader']); ?></td>
+                        <td data-label="Betroffener"><?= htmlspecialchars($entry['coworker']); ?></td>
+                        <td data-label="Titel"><?= htmlspecialchars($entry['title']); ?></td>
+                        <td data-label="Datum"><?= htmlspecialchars(formatDate($entry['date'])); ?></td>
+                        <td data-label="Beschreibung">
+                            <a href="description.php?entry_id=<?= htmlspecialchars($entry['entry_id']); ?>" class="button-common description-btn">
+                                <i class="button-icon fas fa-file-alt"></i>
+                            </a>
+                        </td>
+                        <td data-label="Bearbeiten">
+                            <form method="GET" action="edit_entry.php" style="display:inline;">
+                                <input type="hidden" name="entry_id" value="<?= htmlspecialchars($entry['entry_id']); ?>">
+                                <button type="submit" name="edit_entry" class="button-common edit-btn">
+                                    <i class="button-icon fas fa-edit"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td data-label="Löschen">
+                            <form method="POST" action="delete_entry.php" style="display:inline;">
+                                <input type="hidden" name="entry_id" value="<?= htmlspecialchars($entry['entry_id']); ?>">
+                                <button type="submit" name="delete_entry" class="button-common delete-btn">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
 
     <!-- Button zum Hinzufügen eines neuen Tagebucheintrags -->
     <div class="add-entry-btn-container">

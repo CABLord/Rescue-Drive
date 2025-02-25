@@ -1,38 +1,102 @@
-/* Stile für die Tabellenzellen */
+/* Stile für die Tabelle */
+.table-wrapper {
+    display: flex;
+    justify-content: center; /* Tabelle in der Mitte zentrieren */
+    width: 100%;
+}
+
 table {
-    background-color: #1e1e1e; /* Dunkler Hintergrund für die Tabelle */
-    width: 80%;
+    background-color: #1e1e1e;
+    width: 80%; /* Standardbreite auf 80% setzen */
+    max-width: 80%; /* Breite begrenzen */
     margin: 0 auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
 }
 
+/* Tabellenkopf */
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #1976d2;
+    color: #fff;
+}
+
 th {
-    padding: 15px;
-    text-align: center;
+    background-color: #1e1e1e;
     color: #1976d2;
-    border-bottom: 1px solid #1976d2; /* Dunkler Rand */
-    border-right: 1px solid #1976d2;
-    border-left: 1px solid #1976d2;
-    border-top: 1px solid #1976d2;
 }
-
-td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #1976d2; /* Dunkler Rand */
-    border-right: 1px solid #1976d2;
-    border-left: 1px solid #1976d2;
-    border-top: 1px solid #1976d2;
-}
-
-/* Nur die zweite Spalte nach links ausrichten */
-td:nth-child(2) {
-    text-align: left;
-}
-
 
 /* Abwechselnde Zeilenfarbe */
-tr:nth-child(even) {
-    background-color: #2a2a2a; /* Etwas dunklerer Hintergrund für gerade Zeilen */
+tr:nth-child(odd) {
+    background-color: #2a2a2a;
+}
+
+td:nth-child(2) { 
+    text-align: left; 
+}
+
+/* Zeilenumbruch für "Betroffener" */
+td[data-label="Betroffener"] {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table-wrapper {
+        overflow-x: auto; /* Scrollbare Tabelle */
+        display: flex;
+        justify-content: center; /* In der Mitte lassen */
+        width: 100%;
+    }
+
+    table {
+        width: 90%; /* Etwas größere Breite für bessere Darstellung */
+        max-width: 90%;
+        white-space: nowrap; /* Verhindert das Zusammenquetschen der Inhalte */
+    }
+}
+
+/* Alternative für sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    .table-wrapper {
+        display: flex;
+        justify-content: center; /* In der Mitte lassen */
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        background-color: #2a2a2a;
+        margin-bottom: 10px;
+        border: 1px solid #1976d2;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    td {
+        padding: 10px;
+        text-align: left;
+        border: none;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #1976d2;
+        display: block;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
 }
