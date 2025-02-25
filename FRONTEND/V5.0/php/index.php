@@ -13,28 +13,7 @@ $_SESSION['location'] = "index.php"; ?>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="styles/footer.css"> <!-- Eigene CSS-Datei -->
   <link rel="stylesheet" href="styles/global.css">
-  <style>
-    .map-container {
-      position: relative;
-      width: 600px;
-      height: 600px;
-      padding-bottom: 75%;
-      /* Verhältnis 4:3 */
-      margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .map-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/map.css">
 </head>
 
 <body>
