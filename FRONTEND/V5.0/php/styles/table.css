@@ -37,7 +37,7 @@ td:nth-child(2) {
 }
 
 /* Zeilenumbruch für "Betroffener" */
-td[data-label="Betroffener"] {
+td[data-label="Betroffene Mitarbeiter"] {
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;

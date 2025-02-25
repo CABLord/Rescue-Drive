@@ -34,9 +34,9 @@ $_SESSION['location'] = "index.php";
             <thead>
                 <tr>
                     <th>Eingetragen von</th>
-                    <th>Betroffener</th>
-                    <th>Titel</th>
-                    <th>Datum</th>
+                    <th>Betroffene Mitarbeiter</th>
+                    <th>Tagebucheintrag vom</th>
+                    <th>Eingetragen am</th>
                     <th>Beschreibung</th>
                     <th>Bearbeiten</th>
                     <th>Löschen</th>
@@ -46,9 +46,9 @@ $_SESSION['location'] = "index.php";
                 <?php foreach ($entries as $entry): ?>
                     <tr>
                         <td data-label="Eingetragen von"><?= htmlspecialchars($entry['uploader']); ?></td>
-                        <td data-label="Betroffener"><?= htmlspecialchars($entry['coworker']); ?></td>
-                        <td data-label="Titel"><?= htmlspecialchars($entry['title']); ?></td>
-                        <td data-label="Datum"><?= htmlspecialchars(formatDate($entry['date'])); ?></td>
+                        <td data-label="Betroffene Mitarbeiter"><?= htmlspecialchars($entry['coworker']); ?></td>
+                        <td data-label="Tagebucheintrag vom"><?= htmlspecialchars($entry['title']); ?></td>
+                        <td data-label="Eingetragen am"><?= htmlspecialchars(formatDate($entry['date'])); ?></td>
                         <td data-label="Beschreibung">
                             <a href="description.php?entry_id=<?= htmlspecialchars($entry['entry_id']); ?>" class="button-common description-btn">
                                 <i class="button-icon fas fa-file-alt"></i>
