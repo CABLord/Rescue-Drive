@@ -2,7 +2,7 @@
 .description h2 {
     margin-top: 70px !important;
     text-align: center;
-    color: #333;
+    color: #1976d2; /* Blau, passend zum aktuellen Design */
     margin: 40px 0 20px 0;
     font-family: Arial, sans-serif;
 }
@@ -11,15 +11,15 @@
 .description p {
     max-width: 800px;
     margin: 0 auto 20px auto;
-    background-color: #fff;
+    background-color: #2a2a2a; /* Dunkler Hintergrund für den Beschreibungstext */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 1.1em;
     font-family: Arial, sans-serif;
-    color: #333;
+    color: white; /* Weißer Text für bessere Lesbarkeit */
     line-height: 1.6;
-    border: 1px solid black; /* Schwarzer Rahmen um den Text */
+    border: 1px solid #1976d2; /* Blaue Umrandung, passend zum Design */
 }
 
 /* Styling für den Zurück-Link */
@@ -27,7 +27,7 @@
     display: block;
     text-align: center;
     margin: 0 auto;
-    color: #4CAF50;
+    color: #1976d2; /* Blau für den Link */
     text-decoration: none;
     font-family: Arial, sans-serif;
     font-weight: bold;
@@ -36,6 +36,7 @@
 
 .description a:hover {
     text-decoration: underline;
+    color: #1565c0; /* Dunkleres Blau bei Hover */
 }
 
 /* Responsive Design */
