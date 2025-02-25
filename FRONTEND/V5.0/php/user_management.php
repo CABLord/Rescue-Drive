@@ -13,20 +13,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_user'])) {
     $password = hash('sha256', $_POST['password']); // Passwort verschlüsseln
     $department = $_POST['department']; // Abteilung des Benutzers
 
-    // SQL-Befehl zum Hinzufügen des Benutzers
-    $sql = "INSERT INTO user_data (first_name, last_name, username, password, department) 
-            VALUES (:first_name, :last_name, :username, :password, :department)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':first_name', $first_name);
-    $stmt->bindParam(':last_name', $last_name);
-    $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':password', $password);
-    $stmt->bindParam(':department', $department);
+    // Überprüfen, ob der Benutzername bereits existiert
+    $sql_check = "SELECT COUNT(*) FROM user_data WHERE username = :username";
+    $stmt_check = $pdo->prepare($sql_check);
+    $stmt_check->bindParam(':username', $username);
+    $stmt_check->execute();
+    $count = $stmt_check->fetchColumn();
 
-    if ($stmt->execute()) {
-        $success = "Benutzer erfolgreich hinzugefügt!";
+    if ($count > 0) {
+        // Benutzername existiert bereits
+        $error = "Der Benutzername ist bereits vergeben. Bitte wähle einen anderen.";
     } else {
-        $error = "Fehler beim Hinzufügen des Benutzers.";
+        // SQL-Befehl zum Hinzufügen des Benutzers
+        $sql = "INSERT INTO user_data (first_name, last_name, username, password, department) 
+                VALUES (:first_name, :last_name, :username, :password, :department)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':first_name', $first_name);
+        $stmt->bindParam(':last_name', $last_name);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':department', $department);
+
+        if ($stmt->execute()) {
+            $success = "Benutzer erfolgreich hinzugefügt!";
+        } else {
+            $error = "Fehler beim Hinzufügen des Benutzers.";
+        }
+    }
+}
+
+// Benutzer löschen
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_user'])) {
+    $username_to_delete = $_POST['username_to_delete'];
+
+    // Überprüfen, ob der Benutzername existiert
+    $sql_check_delete = "SELECT COUNT(*) FROM user_data WHERE username = :username";
+    $stmt_check_delete = $pdo->prepare($sql_check_delete);
+    $stmt_check_delete->bindParam(':username', $username_to_delete);
+    $stmt_check_delete->execute();
+    $count_delete = $stmt_check_delete->fetchColumn();
+
+    if ($count_delete > 0) {
+        // SQL-Befehl zum Löschen des Benutzers
+        $sql_delete = "DELETE FROM user_data WHERE username = :username";
+        $stmt_delete = $pdo->prepare($sql_delete);
+        $stmt_delete->bindParam(':username', $username_to_delete);
+
+        if ($stmt_delete->execute()) {
+            $success_delete = "Benutzer erfolgreich gelöscht!";
+        } else {
+            $error_delete = "Fehler beim Löschen des Benutzers.";
+        }
+    } else {
+        $error_delete = "Benutzername nicht gefunden.";
     }
 }
 
@@ -83,6 +122,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_user'])) {
                     <input type="text" id="department" name="department" class="w3-input w3-border w3-round input-full" placeholder="Abteilung" required>
 
                     <input type="submit" name="add_user" value="Benutzer hinzufügen" class="w3-button w3-round input-full" style="background-color:#1976d2">
+                </div>
+            </form>
+
+            <!-- Erfolgs- oder Fehlermeldung für Löschen eines Benutzers -->
+            <?php if (isset($success_delete)): ?>
+                <p class="w3-text-green"><?= htmlspecialchars($success_delete); ?></p>
+            <?php elseif (isset($error_delete)): ?>
+                <p class="w3-text-red"><?= htmlspecialchars($error_delete); ?></p>
+            <?php endif; ?>
+
+            <!-- Formular zum Löschen eines Benutzers -->
+            <h2 class="w3-center" style="color: #1976d2;">Benutzer löschen <i class="fas fa-user-times" style="font-size: 22px;"></i></h2>
+            <form method="POST" action="">
+                <div class="w3-container">
+                    <input type="text" id="username_to_delete" name="username_to_delete" class="w3-input w3-border w3-round input-full" autocomplete="off" placeholder="Benutzername" required>
+
+                    <input type="submit" name="delete_user" value="Benutzer löschen" class="w3-button w3-round input-full" style="background-color:#1976d2">
                 </div>
             </form>
 
