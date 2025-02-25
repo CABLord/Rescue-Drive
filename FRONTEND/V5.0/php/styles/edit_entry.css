@@ -72,6 +72,8 @@ container {
 @media (max-width: 768px) {
     form {
         padding: 15px;
+        width: 90%; /* Etwas größere Breite für bessere Darstellung */
+        max-width: 90%;
     }
 
     input[type="text"], textarea {
@@ -80,12 +82,15 @@ container {
 
     button {
         padding: 8px 15px;
+        width: 60%;
     }
 }
 
 @media (max-width: 480px) {
     form {
         padding: 10px;
+        width: 90%; /* Etwas größere Breite für bessere Darstellung */
+        max-width: 90%;
     }
 
     input[type="text"], textarea {
@@ -94,6 +99,7 @@ container {
 
     button {
         padding: 6px 10px;
+        width: 60%;
     }
 
     label {

@@ -15,7 +15,7 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
+ 
 /* Einheitliche Größe für Inputs und Button */
 .input-full {
     width: 100%;
@@ -28,6 +28,12 @@
     color: #ffffff;
     border-radius: 6px;
     padding: 10px;
+}
+
+/* Hover-Effekt für den Button */
+input[type="submit"]:hover {
+    background-color: #1565c0 !important; /* Dunklerer Blauton für den Hover-Effekt */
+    color: #ffffff !important;
 }
 
 /* Blaue Buttons */

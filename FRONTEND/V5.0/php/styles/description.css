@@ -3,7 +3,7 @@
     margin-top: 70px !important;
     text-align: center;
     color: #1976d2; /* Blau, passend zum aktuellen Design */
-    margin: 40px 0 20px 0;
+    margin: 70px 0 20px 0 !important;
     font-family: Arial, sans-serif;
 }
 
@@ -42,8 +42,6 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .description h2 {
-        margin-top: 50px !important;
-        margin: 30px 0 15px 0;
         font-size: 1.5em;
     }
 
@@ -51,9 +49,10 @@
         padding: 15px;
         font-size: 1em;
         border-radius: 6px;
+        width: 90%;
     }
 
-    .description a {
+    .description a { 
         margin-bottom: 100px;
         font-size: 1em;
     }
@@ -61,8 +60,6 @@
 
 @media (max-width: 480px) {
     .description h2 {
-        margin-top: 30px !important;
-        margin: 20px 0 10px 0;
         font-size: 1.2em;
     }
 
@@ -70,6 +67,7 @@
         padding: 10px;
         font-size: 0.9em;
         border-radius: 4px;
+        width: 90%;
     }
 
     .description a {
