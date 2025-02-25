@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="password" id="password" name="password" class="w3-input w3-border w3-round input-full" placeholder="Passwort">
                         <i class="fas fa-eye" id="togglePassword" style="color: #1976d2;"></i>
                     </div>
-
+ 
                     <input type="submit" value="Login" class="w3-button w3-round input-full" style="background-color:#1976d2">
                 </div>
             </form>
