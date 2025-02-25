@@ -1,4 +1,5 @@
 /* Gemeinsame Stile für alle Schaltflächen */
+/* Gemeinsame Button-Stile */
 .button-common {
     border: none;
     border-radius: 5px;
@@ -10,6 +11,7 @@
     font-size: 16px; /* Gemeinsame Schriftgröße */
 }
 
+/* Gemeinsame Symbolgröße */
 .button-icon {
     margin-right: 8px;
     font-size: 18px; /* Gemeinsame Symbolgröße */
@@ -17,25 +19,25 @@
 
 /* Spezifische Stile für jede Schaltfläche */
 .delete-btn {
-    background-color: #f44336;
+    background-color: #1976d2; /* Harmonisches Blau */
     color: white;
 }
 
 .delete-btn:hover {
-    background-color: #d32f2f;
+    background-color: #1565c0; /* Dunklerer Blauton für Hover */
 }
 
 .edit-btn {
-    background-color: #4CAF50;
+    background-color: #1976d2; /* Harmonisches Blau */
     color: white;
 }
 
 .edit-btn:hover {
-    background-color: #45a049;
+    background-color: #1565c0; /* Dunklerer Blauton für Hover */
 }
 
 .description-btn {
-    background-color: #add8e6;
+    background-color: #1976d2; /* Harmonisches Blau */
     color: white;
     text-decoration: none;
     font-size: 16px; /* Gemeinsame Schriftgröße */
@@ -43,11 +45,16 @@
 }
 
 .description-btn:hover {
-    background-color: #87ceeb;
+    background-color: #1565c0; /* Dunklerer Blauton für Hover */
+}
+
+/* Falls Icons eine gemeinsame Farbe haben */
+.description-btn i, .edit-btn i, .delete-btn i {
+    color: white;
 }
 
 .description-btn i, .edit-btn i, .delete-btn i {
-    color: white; /* Falls Icons eine gemeinsame Farbe haben */
+    color: white;
 }
 
 /* Button zum Hinzufügen eines neuen Eintrags */
@@ -67,8 +74,7 @@
 }
 
 .add-entry-btn:hover {
-    background-color: #ffffff;
-    color: black
+    background-color: #1565c0;
 }
 
 /* Responsive Design */

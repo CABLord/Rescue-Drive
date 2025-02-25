@@ -79,7 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_entry'])) {
         <textarea id="description" name="description" rows="10" cols="50" required></textarea>
         <label for="coworker">Betroffenen:</label><br>
         <input type="text" id="coworker" name="coworker" autocomplete="off"><br>
-        <button type="submit" name="add_entry">Eintrag hinzufügen</button>
+        <container>
+            <button type="submit" name="add_entry">Eintrag hinzufügen</button>
+        </container>
     </form>
 
     <!-- Footer einbinden -->
