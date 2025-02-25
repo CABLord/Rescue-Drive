@@ -3,44 +3,69 @@
 /* Grundlegende Stile für das Formular */
 form {
     max-width: 600px;
+    width: 100%;  /* Setzt die Breite auf 100%, damit das Formular den gesamten Platz nutzt */
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color: #1e1e1e; /* Dunkler Hintergrund für das Formular */
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    margin-bottom: 50px !important;
+    margin-bottom: 50px;
+    color: white; /* Weißer Text für bessere Lesbarkeit */
 }
 
+/* Formularbeschriftung */
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #1976d2; /* Blau für die Beschriftung, passend zum Design */
 }
 
+/* Eingabefelder und Textarea */
 input[type="text"], textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #1976d2; /* Blaue Umrandung, passend zum Design */
     border-radius: 4px;
+    background-color: #2a2a2a; /* Dunklerer Hintergrund für Eingabefelder */
+    color: white; /* Weißer Text in den Eingabefeldern */
     box-sizing: border-box;
 }
 
+/* Textarea: keine Größenänderung */
 textarea {
-    resize: none; /* Verhindert die Größenänderung durch den Benutzer */
+    resize: none; 
+    margin-bottom: 20px !important;
 }
 
+/* Schaltflächen-Stil */
 button {
-    background-color: #4CAF50;
+    background-color: #1976d2; /* Blau für den Button */
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    display: block; /* Macht den Button als Block-Element */
+    margin-top: 20px; /* Abstand zum oberen Inhalt */
+    width: 40%; /* Setzt den Button auf 30% der Formbreite */
+    margin-left: auto;  /* Zentriert den Button horizontal */
+    margin-right: auto; /* Zentriert den Button horizontal */
 }
 
+/* Hover-Effekt für Schaltflächen */
 button:hover {
-    background-color: #45a049;
+    background-color: #1565c0; /* Dunklerer Blauton für den Hover-Effekt */
+}
+
+/* Container für die zentrale Ausrichtung von Formularelementen */
+container {
+    display: flex;
+    flex-direction: column;  /* Alle Elemente vertikal anordnen */
+    align-items: center;     /* Zentriert die Elemente horizontal */
+    justify-content: center; /* Vertikale Zentrierung innerhalb des Containers */
 }
 
 /* Responsive Design */

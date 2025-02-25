@@ -76,8 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <label for="coworker">Betroffenen:</label><br>
         <input type="text" id="coworker" name="coworker" value="<?= htmlspecialchars($entry['coworker']); ?>" required><br>
-
-        <button type="submit">Änderungen speichern</button>
+        <container>
+            <button type="submit">Änderungen speichern</button>
+        </container>
     </form>
 
     <!-- Footer einbinden -->
