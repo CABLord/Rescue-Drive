@@ -2,7 +2,9 @@
 require 'functions.php';
 checkLogin();
 
-$_SESSION['location'] = "index.php"; ?>
+$_SESSION['location'] = "index.php";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,6 +17,8 @@ $_SESSION['location'] = "index.php"; ?>
     <link rel="stylesheet" href="styles/footer.css"> <!-- Eigene CSS-Datei -->
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/logger.css">
+    <link rel="stylesheet" href="styles/entries.css">
+    <link rel="stylesheet" href="styles/table.css">
 </head>
 
 <body>
@@ -22,14 +26,47 @@ $_SESSION['location'] = "index.php"; ?>
     <!-- Menü einbinden -->
     <?php include 'html/menu.html'; ?>
 
-    <h2>Arduino Logger</h2>
-    <div class="logger" id="logger">
-        <div class="status" id="status">Fetching data...</div>
-    </div>
-    <script src="logger.js"></script>
+    <!DOCTYPE html>
+    <html lang="de">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Logger</title>
+    </head>
+
+    <body>
+
+        <h2>Auto Statusanzeige</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Wall</th>
+                    <th>Card</th>
+                    <th>Position</th>
+                    <th>Brightness</th>
+                    <th>Moving Card</th>
+                    <th>Drive</th>
+                    <th>Light</th>
+                    <th>Akku</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="data-body">
+                <!-- Daten werden hier eingefügt -->
+            </tbody>
+        </table>
+
+    </body>
+
+    </html>
 
     <!-- Footer einbinden -->
     <?php include 'html/footer.html'; ?>
+
+    <script src="logger.js"></script>
+</html>
 </body>
 
 </html>
