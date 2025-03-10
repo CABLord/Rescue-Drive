@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_user'])) {
                         <i class="fas fa-eye" id="togglePassword" style="color: #1976d2;"></i>
                     </div>
 
-                    <input type="text" id="department" name="department" class="w3-input w3-border w3-round input-full" placeholder="Abteilung" required>
+                    <input type="text" id="department" name="department" class="w3-input w3-border w3-round input-full" autocomplete="off" placeholder="Abteilung" required>
 
                     <input type="submit" name="add_user" value="Benutzer hinzufügen" class="w3-button w3-round input-full" style="background-color:#1976d2">
                 </div>
