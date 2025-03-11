@@ -31,6 +31,24 @@ h2 {
     color: #666;
 }
 
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+    width: 70%;
+    margin: auto; /* Karte horizontal im Container zentrieren */
+    display: flex;
+    flex-direction: column; /* Elemente untereinander anordnen */
+    align-items: center; /* Karte horizontal zentrieren */
+    text-align: left; /* Text linksbündig ausrichten */
+}
+
+.card p {
+    width: 100%; /* Sicherstellen, dass die Paragraphen die volle Breite nutzen */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h2 {

@@ -75,6 +75,16 @@ main {
     background-color: #1565c0; /* Dunkleres Blau */
 }
 
+/* Card Styling */
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e1e;
+    color: #e0e0e0; /* Helle Schrift für besseren Kontrast */
+    margin-bottom: 20px
+}
+
 /* Mobile Navigation */
 #mobileMenu {
     background-color: #1e1e1e;
