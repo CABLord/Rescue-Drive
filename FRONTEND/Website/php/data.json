@@ -5,5 +5,26 @@
         "LIGHT": "ON",
         "AKKU": "75",
         "STATUS": "auto"
+    },
+    {
+        "TIMESTAMP": "10\/03\/2025 14:30:00",
+        "DRIVE": "forward",
+        "LIGHT": "ON",
+        "AKKU": "75",
+        "STATUS": "auto"
+    },
+    {
+        "TIMESTAMP": "10\/03\/2025 14:30:00",
+        "DRIVE": "forward",
+        "LIGHT": "ON",
+        "AKKU": "75",
+        "STATUS": "auto"
+    },
+    {
+        "TIMESTAMP": "10\/03\/2025 14:30:00",
+        "DRIVE": "forward",
+        "LIGHT": "ON",
+        "AKKU": "75",
+        "STATUS": "auto"
     }
 ]
