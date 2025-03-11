@@ -35,4 +35,15 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     }
     exit;
 }
+
+// Falls eine DELETE-Anfrage kommt, Daten löschen
+if ($_SERVER["REQUEST_METHOD"] === "DELETE") {
+    if (file_exists($dataFile)) {
+        file_put_contents($dataFile, json_encode([], JSON_PRETTY_PRINT));
+        echo json_encode(["message" => "Data deleted successfully"]);
+    } else {
+        echo json_encode(["error" => "No data to delete"]);
+    }
+    exit;
+}
 ?>

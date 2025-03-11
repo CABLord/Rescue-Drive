@@ -21,6 +21,7 @@ $_SESSION['location'] = "index.php";
     <link rel="stylesheet" href="styles/logger.css">
     <link rel="stylesheet" href="styles/entries.css">
     <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/buttons.css">
 
     <script src="jscript/logger.js"></script>
 </head>
@@ -30,7 +31,7 @@ $_SESSION['location'] = "index.php";
     <!-- Menü einbinden -->
     <?php include 'html/menu.html'; ?>
 
-    <h2>Dynamische JSON-Datenanzeige</h2>
+    <h2>ResQRover-Logs</h2>
     <table>
         <thead>
             <tr>
@@ -50,6 +51,13 @@ $_SESSION['location'] = "index.php";
             <!-- Daten werden hier eingefügt -->
         </tbody>
     </table>
+
+    <!-- Button zum Löschen der Logs -->
+    <div class="add-entry-btn-container">
+        <button class="button-common add-entry-btn" onclick="deleteLogs()">
+            <i class="button-icon fas fa-trash"></i> Logs löschen
+        </button>
+    </div>
 
     <!-- Footer einbinden -->
     <?php include 'html/footer.html'; ?>
