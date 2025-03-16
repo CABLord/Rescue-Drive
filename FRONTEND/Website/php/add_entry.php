@@ -73,11 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_entry'])) {
 
     <!-- Formular zum Hinzufügen eines neuen Tagebucheintrags -->
     <form method="POST" action="add_entry.php">
-        <label for="title">Titel:</label><br>
+        <label for="title">Tagebucheintrag vom:</label><br>
         <input type="text" id="title" name="title" required><br>
         <label for="description">Beschreibung:</label><br>
         <textarea id="description" name="description" rows="10" cols="50" required></textarea>
-        <label for="coworker">Betroffenen:</label><br>
+        <label for="coworker">Betroffene Mitarbeiter:</label><br>
         <input type="text" id="coworker" name="coworker" autocomplete="off"><br>
         <container>
             <button type="submit" name="add_entry">Eintrag hinzufügen</button>

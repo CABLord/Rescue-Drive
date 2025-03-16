@@ -3,18 +3,18 @@
 .button-common {
     border: none;
     border-radius: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-flex; /* Flexbox für horizontale und vertikale Zentrierung */
+    align-items: center;  /* Vertikale Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
     cursor: pointer;
     padding: 10px;
     font-size: 16px; /* Gemeinsame Schriftgröße */
 }
 
-/* Gemeinsame Symbolgröße */
 .button-icon {
-    margin-right: 8px;
-    font-size: 18px; /* Gemeinsame Symbolgröße */
+    margin-right: 0; /* Verhindert Abstand nach rechts, falls nicht benötigt */
+    font-size: 18px;
+    display: inline-block; /* Stellt sicher, dass das Icon gut im Button ausgerichtet ist */
 }
 
 /* Spezifische Stile für jede Schaltfläche */

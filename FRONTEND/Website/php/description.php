@@ -41,11 +41,6 @@ if (isset($_GET['entry_id'])) {
     <div class="description">
         <h2><?= htmlspecialchars($entry['title']); ?></h2>
         <p><?= nl2br(htmlspecialchars($entry['description'])); ?></p>
-        <a href="entries.php">
-            <button class="button-common add-entry-btn">
-                <i class="button-icon fas fa-plus"></i> Zurück
-            </button>
-        </a>
     </div>
 
     <!-- Footer einbinden -->

@@ -9,7 +9,7 @@ $_SESSION['location'] = "index.php";
 
 <!DOCTYPE html>
 <html lang="de">
- 
+
 <head>
     <meta charset="UTF-8">
     <title>Tagebuch</title>
@@ -81,7 +81,7 @@ $_SESSION['location'] = "index.php";
     <div class="add-entry-btn-container">
         <a href="add_entry.php">
             <button class="button-common add-entry-btn">
-                <i class="button-icon fas fa-plus"></i> Neuer Eintrag
+                <i class="button-icon fas fa-plus" style="margin-right: 8px;"></i> Neuer Eintrag
             </button>
         </a>
     </div>

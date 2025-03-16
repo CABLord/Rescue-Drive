@@ -68,13 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Bearbeitungsformular -->
     <form method="POST" action="edit_entry.php?entry_id=<?= htmlspecialchars($entry['entry_id']); ?>">
-        <label for="title">Titel:</label><br>
+        <label for="title">Tagebucheintrag vom:</label><br>
         <input type="text" id="title" name="title" value="<?= htmlspecialchars($entry['title']); ?>" required><br>
 
         <label for="description">Beschreibung:</label><br>
         <textarea name="description" id="description" rows="10" cols="50" required><?= htmlspecialchars($entry['description']); ?></textarea><br>
 
-        <label for="coworker">Betroffenen:</label><br>
+        <label for="coworker">Betroffene Mitarbeiter:</label><br>
         <input type="text" id="coworker" name="coworker" value="<?= htmlspecialchars($entry['coworker']); ?>" required><br>
         <container>
             <button type="submit">Änderungen speichern</button>
