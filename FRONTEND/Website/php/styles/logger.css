@@ -1,102 +1,174 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
 h2 {
-    text-align: center;
-    color: #333;
-    margin: 70px 0 20px 0 !important; /* Oberer Abstand von 40px, unterer Abstand von 20px */
+  text-align: center;
+  color: #333;
+  margin: 70px 0 20px 0 !important; /* Oberer Abstand von 40px, unterer Abstand von 20px */
 }
 
 /* Terminal-ähnliche Darstellung */
 .logger {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 10px;
-    background: #000;
-    color: #00ff00; /* Helles Grün für Text wie in einem Terminal */
-    font-family: 'Courier New', Courier, monospace; /* Monospaced-Schriftart für Terminal-Feeling */
-    border: 1px solid #00ff00; /* Grüner Rand für Terminal-Look */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    white-space: pre-wrap; /* Zeilenumbrüche beibehalten */
-    word-wrap: break-word; /* Lange Wörter umbrechen */
+  margin-top: 30px !important;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #000;
+  color: #1976d2;
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid #1976d2;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  height: 275px; /* Feste Höhe für das Terminal-Fenster */
+  overflow-y: scroll; /* Ermöglicht das Scrollen */
+}
+
+/* Verstecke die Scrollleiste für Webkit-Browser */
+.logger::-webkit-scrollbar {
+  display: none; /* Verstecke die Scrollleiste */
+}
+
+/* Für Firefox */
+.logger {
+  scrollbar-width: none; /* Versteckt die Scrollleiste in Firefox */
 }
 
 .log-entry {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    background: transparent; /* Keine Hintergrundfarbe */
-    border-left: 5px solid #00ff00;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background: transparent; /* Keine Hintergrundfarbe */
+  border-left: 5px solid #1976d2;
 }
 
 .outgoing {
-    background-color: transparent;
-    border-left: 5px solid #00acc1; /* Blau für ausgehende Nachrichten */
+  border-left: 5px solid #00acc1; /* Blau für ausgehende Nachrichten */
 }
 
 .incoming {
-    background-color: transparent;
-    border-left: 5px solid #d81b60; /* Rot für eingehende Nachrichten */
+  border-left: 5px solid #d81b60; /* Rot für eingehende Nachrichten */
 }
 
 .status {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
 
-.card {
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    margin-bottom: 20px;
-    width: 70%;
-    margin: auto; /* Karte horizontal im Container zentrieren */
-    display: flex;
-    flex-direction: column; /* Elemente untereinander anordnen */
-    align-items: center; /* Karte horizontal zentrieren */
-    text-align: left; /* Text linksbündig ausrichten */
+/* Container for current log entry */
+.current-log-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #1e1e1e; /* Dark background for modern look */
+  border: 1px solid #333; /* Subtle border color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #e0e0e0; /* Light text for contrast */
 }
 
-.card p {
-    width: 100%; /* Sicherstellen, dass die Paragraphen die volle Breite nutzen */
+.current-log {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Spalten gleich breit */
+  grid-gap: 20px;
+  justify-items: center; /* Zentriere die Items horizontal */
+  align-items: center; /* Zentriere die Items vertikal */
+}
+
+.current-log-item {
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 120px; /* Feste Breite für die Icons */
+}
+
+.current-log-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.current-log-item i {
+  margin-right: 8px;
+  font-size: 20px; /* Larger icons for better visibility */
+  color: #1976d2; /* Accent color for icons */
+}
+
+.current-log-item span {
+  font-size: 12px;
+  color: #b0b0b0; /* Slightly muted text for a softer look */
+}
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  height: auto;
+}
+
+#dashboard {
+  flex: 1;
+  max-width: 60%;
+}
+
+#current-log-container {
+  flex: 1;
+  max-width: 40%;
+  margin-right: 75px;
+  min-height: 275px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    h2 {
-        margin: 50px 0 15px 0 !important; /* Oberer Abstand von 50px, unterer Abstand von 15px für mittlere Bildschirme */
-    }
+  h2 {
+      margin: 50px 0 15px 0 !important;
+  }
 
-    .logger {
-        padding: 8px;
-        width: 90%;
-    }
+  .logger {
+      padding: 8px;
+      width: 90%;
+  }
 
-    .log-entry {
-        margin: 8px 0;
-        padding: 8px;
-    }
+  .log-entry {
+      margin: 8px 0;
+      padding: 8px;
+  }
 
-    .status {
-        font-size: 13px;
-    }
+  .status {
+      font-size: 13px;
+  }
 }
 
 @media (max-width: 480px) {
-    h2 {
-        margin: 30px 0 10px 0 !important; /* Oberer Abstand von 30px, unterer Abstand von 10px für kleine Bildschirme */
-    }
+  h2 {
+      margin: 30px 0 10px 0 !important;
+  }
 
-    .logger {
-        width: 90%;
-        padding: 6px;
-    }
+  .logger {
+      width: 90%;
+      padding: 6px;
+  }
 
-    .log-entry {
-        margin: 6px 0;
-        padding: 6px;
-    }
+  .log-entry {
+      margin: 6px 0;
+      padding: 6px;
+  }
 
-    .status {
-        font-size: 12px;
-    }
+  .status {
+      font-size: 12px;
+  }
 }
