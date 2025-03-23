@@ -2,13 +2,13 @@
     {
         "TIMESTAMP": "10\/03\/2025 14:30:00",
         "WALL": "front",
-        "CARD": "blue",
+        "CARD": "red",
         "POSITION": "start",
         "BRIGHTNESS": "bright",
         "MOVING_CARD": "pick up",
         "DRIVE": "forward",
         "LIGHT": "ON",
-        "AKKU": "75",
+        "AKKU": "50",
         "STATUS": "auto"
     },
     {
@@ -21,6 +21,18 @@
         "DRIVE": "forward",
         "LIGHT": "ON",
         "AKKU": "50",
+        "STATUS": "auto"
+    },
+    {
+        "TIMESTAMP": "10\/03\/2025 14:30:00",
+        "WALL": "front",
+        "CARD": "blue",
+        "POSITION": "start",
+        "BRIGHTNESS": "bright",
+        "MOVING_CARD": "pick up",
+        "DRIVE": "forward",
+        "LIGHT": "ON",
+        "AKKU": "75",
         "STATUS": "auto"
     }
 ]
