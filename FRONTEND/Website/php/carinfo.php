@@ -2,10 +2,11 @@
 require 'functions.php';
 checkLogin();
 
-$_SESSION['location'] = "carinfo.php"; ?>
+$_SESSION['location'] = "carinfo.php";
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8">
@@ -21,16 +22,28 @@ $_SESSION['location'] = "carinfo.php"; ?>
   <!-- Menü einbinden -->
   <?php include 'html/menu.html'; ?>
 
-  <h2 style="margin-top: 70px; text-align: center;">
-    <span>🔧</span> Bauteile
-  </h2>
+  <div id="bauteile-header" style="margin-top: 80px;">
+    <h2 id="toggle-button">
+      <span>🔧</span> Bauteile ▼
+    </h2>
+    <p id="bauteile-description">Hier kannst du alle Bauteile des Fahrzeugs einsehen. Klicke auf die Überschrift, um die Liste anzuzeigen.</p>
+  </div>
 
-  <div class="container">
+
+  <div id="bauteile-container" class="container">
     <div class="tile">
       <img src="raspberrypi.jpg" alt="Raspberry Pi">
       <div>
         <h2>Raspberry Pi 5</h2>
         <p>Der Mini-Computer steuert das gesamte System und verarbeitet Sensordaten sowie Steuerbefehle.</p>
+      </div>
+    </div>
+
+    <div class="tile">
+      <img src="arduino.jpg" alt="Arduino">
+      <div>
+        <h2>Arduino</h2>
+        <p>Ein Mikrocontroller zur Steuerung verschiedener Bauteile, insbesondere der Sensoren und Motoren.</p>
       </div>
     </div>
 
@@ -107,14 +120,6 @@ $_SESSION['location'] = "carinfo.php"; ?>
     </div>
 
     <div class="tile">
-      <img src="arduino.jpg" alt="Arduino">
-      <div>
-        <h2>Arduino</h2>
-        <p>Ein Mikrocontroller zur Steuerung verschiedener Bauteile, insbesondere der Sensoren und Motoren.</p>
-      </div>
-    </div>
-
-    <div class="tile">
       <img src="lenkrollen.jpg" alt="Lenkrollen">
       <div>
         <h2>Lenkrollen</h2>
@@ -126,7 +131,7 @@ $_SESSION['location'] = "carinfo.php"; ?>
       <img src="schienenraeder.jpg" alt="Schienenräder">
       <div>
         <h2>Schienenräder</h2>
-        <p>Speziell für Schienensysteme, möglicherweise für eine zusätzliche Führung.</p>
+        <p>Spezielle Räder für Schienensysteme, möglicherweise für eine zusätzliche Führung.</p>
       </div>
     </div>
 
@@ -134,7 +139,7 @@ $_SESSION['location'] = "carinfo.php"; ?>
       <img src="schiene.jpg" alt="Schiene">
       <div>
         <h2>Schiene</h2>
-        <p>Führt oder begrenzt Bewegungen, z. B. für den Kärtchenauswurf.</p>
+        <p>Führt oder begrenzt bestimmte Bewegungen, z. B. für den Kärtchenauswurf.</p>
       </div>
     </div>
 
@@ -147,7 +152,7 @@ $_SESSION['location'] = "carinfo.php"; ?>
     </div>
 
     <div class="tile">
-      <img src="batterie_mikrocontroller.jpg" alt="Batterie Mikrocontroller">
+      <img src="batterie.jpg" alt="Batterie Mikrocontroller">
       <div>
         <h2>Batterie für Mikrocontroller (7,4 V)</h2>
         <p>Versorgt den Mikrocontroller mit Energie.</p>
@@ -155,7 +160,7 @@ $_SESSION['location'] = "carinfo.php"; ?>
     </div>
 
     <div class="tile">
-      <img src="batterie_motoren.jpg" alt="Batterie Motoren">
+      <img src="batterie_motor.jpg" alt="Batterie Motoren">
       <div>
         <h2>Batterie für Motoren (-12 V)</h2>
         <p>Liefert Strom für die Motoren.</p>
@@ -173,6 +178,8 @@ $_SESSION['location'] = "carinfo.php"; ?>
 
   <!-- Footer einbinden -->
   <?php include 'html/footer.html'; ?>
+
+  <script src="jscript/carinfo.js"></script>
 </body>
 
 </html>

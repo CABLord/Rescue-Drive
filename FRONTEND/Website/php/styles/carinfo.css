@@ -1,39 +1,70 @@
-.content {
-    flex-grow: 1;
-    padding: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
 .container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     padding: 20px;
-  }
+}
 
-  .tile {
+.tile {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 600px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #1976d2;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .tile img {
+.tile img {
     width: 200px;
     height: auto;
     border-radius: 8px;
-  }
+}
 
-  .tile:nth-child(even) {
+.tile:nth-child(even) {
     flex-direction: row-reverse;
-  }
+}
+
+#bauteile-container {
+    display: none;
+}
+
+#bauteile-header {
+    text-align: center;
+    border: 2px solid #1976d2;
+    /* Blaue Akzentfarbe */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    /* Gleiche Hintergrundfarbe wie andere Karten */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* Dunklerer Schatten für mehr Tiefe */
+}
+
+#toggle-button {
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 1.8rem;
+    transition: color 0.3s;
+}
+
+#toggle-button:hover {
+    color: #1976d2;
+    /* Blaue Hover-Farbe */
+}
+
+#bauteile-description {
+    font-size: 14px;
+    color: #b0b0b0;
+    /* Grauer Text für besseren Kontrast */
+    margin-top: 5px;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
