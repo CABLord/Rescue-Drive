@@ -18,7 +18,6 @@ $_SESSION['location'] = "index.php"; ?>
 </head>
 
 <body>
-
     <!-- Menü einbinden -->
     <?php include 'html/menu.html'; ?>
 
@@ -48,12 +47,17 @@ $_SESSION['location'] = "index.php"; ?>
             onmouseleave="stopCar()" ontouchstart="controlCar('backward')" ontouchend="stopCar()">
             <i class="fas fa-arrow-down"></i>
         </button>
+        <!--turn-->
+        <button class="control-btn btn-turn" onmousedown="controlCar('turn')" onmouseup="stopCar()"
+            onmouseleave="stopCar()" ontouchstart="controlCar('turn')" ontouchend="stopCar()">
+            <i class="fas fa-undo-alt"></i>
+        </button>
 
         <!-- Magnet-Buttons -->
-        <button class="control-btn btn-magnet-up" onmousedown="activateMagnetUp()" onmouseup="stopCar()"
+        <!--<button class="control-btn btn-magnet-up" onmousedown="activateMagnetUp()" onmouseup="stopCar()"
             onmouseleave="stopCar()" ontouchstart="activateMagnetUp()" ontouchend="stopCar()">
             <i class="fas fa-magnet"></i> <i class="fas fa-arrow-up"></i>
-        </button>
+        </button>-->
 
         <button class="control-btn btn-magnet-down" onmousedown="activateMagnetDown()" onmouseup="stopCar()"
             onmouseleave="stopCar()" ontouchstart="activateMagnetDown()" ontouchend="stopCar()">
@@ -66,11 +70,29 @@ $_SESSION['location'] = "index.php"; ?>
             <i class="fas fa-first-aid"></i> <i class="fas fa-arrow-down"></i>
         </button>
     </div>
+    <div class="toggle-container">
+        <span>Manual</span>
+        <label class="switch">
+            <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+            <span class="slider"></span>
+        </label>
+        <span>Automatic</span>
+    </div>
 
     <!-- Footer einbinden -->
     <?php include 'html/footer.html'; ?>
 
-    <script src="jscript/control.js"></script>
+    <script src="jscript/control.js"></script><!--jscript/control.js-->
+    <script>
+        function toggleMode() {
+            const toggle = document.getElementById("modeToggle");
+            if (toggle.checked) {
+                setAutomaticMode();
+            } else {
+                setManualMode();
+            }
+        }
+    </script>
 </body>
 
 </html>

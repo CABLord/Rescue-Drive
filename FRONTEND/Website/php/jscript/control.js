@@ -1,12 +1,12 @@
 const messageElement = document.getElementById('message');
-const apiUrl = "http://10.10.30.128:4000/control"; // Replace with your Raspberry Pi's IP and port
+const apiUrl = "http://10.10.30.128:4000/control"; // Replace with your Raspberry Pi's IP and porthttp://10.10.30.128:4000/control
 let lastcomment = null; // Last sent command
 
 async function sendRequestToAPI(command) {
     try {
-        const response = await fetch(apiUrl, { 
+        const response = await fetch(apiUrl, {
             method: "POST",
-            headers: { 
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ command })
@@ -16,7 +16,7 @@ async function sendRequestToAPI(command) {
             throw new Error(`Error: ${response.statusText}`);
         }
 
-        const data = await response.json();
+        const data = await response.text();
         console.log(data);
     } catch (error) {
         console.error("Failed to send command to the Raspberry Pi:", error);
@@ -55,13 +55,13 @@ function dropPackage() {
     }
 }
 
-function activateMagnetUp() {
+/*function activateMagnetUp() {
     if (lastcomment !== "magnet_up") {
         lastcomment = "magnet_up";
         messageElement.textContent = "Magnet nach oben aktiviert!";
         sendRequestToAPI("magnet_up");
     }
-}
+}*/
 
 function activateMagnetDown() {
     if (lastcomment !== "magnet_down") {
@@ -70,14 +70,24 @@ function activateMagnetDown() {
         sendRequestToAPI("magnet_down");
     }
 }
-
-// Add event listener to button if it exists
-document.addEventListener("DOMContentLoaded", () => {
-    const dropButton = document.getElementById("dropButton");
-    if (dropButton) {
-        dropButton.addEventListener("click", dropPackage);
+function setManualMode() {
+    if (lastcomment !== "set_manual") {
+        lastcomment = "set_manual";
+        messageElement.textContent = "Auto wurde nach manuell umgeschaltet!";
+        sendRequestToAPI("set_manual");
     }
-});
+    console.log("Switched to Manual Mode");
+}
+
+function setAutomaticMode() {
+    if (lastcomment !== "set_automatic") {
+        lastcomment = "set_automatic";
+        messageElement.textContent = "Auto wurde nach automatisch umgeschaltet!";
+        sendRequestToAPI("set_automatic");
+    }
+    console.log("Switched to Manual Mode");
+}
+
 
 const keyDirections = {
     'ArrowUp': 'forward',

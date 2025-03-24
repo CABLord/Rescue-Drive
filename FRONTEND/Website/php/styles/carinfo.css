@@ -5,6 +5,36 @@
     margin-bottom: 50px;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .tile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tile img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .tile:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .content {
