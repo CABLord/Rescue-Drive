@@ -1,34 +1,14 @@
-let lastcomment = null; // Last sent command
-
 const messageElement = document.getElementById('message');
-let apiUrl = localStorage.getItem('raspberryIp') || "http://10.10.30.128:4000/control";
+const serverApiUrl = "http://localhost:5000/control"; // Richtig: URL der REST-API auf deinem lokalen Server
+let lastCommand = null;
 
-// Funktion zum Speichern der IP-Adresse
-function saveIp() {
-    const ipInput = document.getElementById("raspberryIp").value.trim();
-    if (ipInput) {
-        localStorage.setItem("raspberryIp", `http://${ipInput}:4000/control`);
-        apiUrl = `http://${ipInput}:4000/control`;
-        alert("IP gespeichert: " + apiUrl);
-    } else {
-        alert("Bitte eine gültige IP-Adresse eingeben.");
-    }
-}
-
-// Falls eine IP gespeichert ist, setze den Wert im Input-Feld
-document.addEventListener("DOMContentLoaded", () => {
-    const savedIp = localStorage.getItem("raspberryIp");
-    if (savedIp) {
-        document.getElementById("raspberryIp").value = savedIp.replace("http://", "").replace(":4000/control", "");
-    }
-});
-
-// API-Anfrage mit der gespeicherten IP-Adresse
-async function sendRequestToAPI(command) {
+async function sendToServer(command) {
     try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch(serverApiUrl, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({ command })
         });
 
@@ -37,105 +17,58 @@ async function sendRequestToAPI(command) {
         }
 
         const data = await response.text();
-        console.log(data);
+        console.log("Response from server:", data);
     } catch (error) {
         console.error("Failed to send command:", error);
     }
 }
 
-
-const directions = {
-    'forward': 'w',
-    'backward': 's',
-    'left': 'a',
-    'right': 'd'
-};
-
 function controlCar(direction) {
-    if (lastcomment !== direction) {
-        lastcomment = direction;
+    if (lastCommand !== direction) {
+        lastCommand = direction;
         messageElement.textContent = `The car is moving ${direction}`;
-        sendRequestToAPI(direction);
+        sendToServer(direction);
     }
 }
 
 function stopCar() {
-    if (lastcomment !== "stop") {
-        lastcomment = "stop";
+    if (lastCommand !== "stop") {
+        lastCommand = "stop";
         messageElement.textContent = "Use the arrow keys (↑←↓→) or WASD to control the vehicle";
-        sendRequestToAPI("stop");
+        sendToServer("stop");
     }
 }
 
-// Function to drop a supply package
 function dropPackage() {
-    if (lastcomment !== "drop") {
-        lastcomment = "drop";
+    if (lastCommand !== "drop") {
+        lastCommand = "drop";
         messageElement.textContent = "A supply package has been successfully dropped!";
-        sendRequestToAPI("drop");
+        sendToServer("drop");
     }
 }
-
-/*function activateMagnetUp() {
-    if (lastcomment !== "magnet_up") {
-        lastcomment = "magnet_up";
-        messageElement.textContent = "Magnet nach oben aktiviert!";
-        sendRequestToAPI("magnet_up");
-    }
-}*/
 
 function activateMagnetDown() {
-    if (lastcomment !== "magnet_down") {
-        lastcomment = "magnet_down";
+    if (lastCommand !== "magnet_down") {
+        lastCommand = "magnet_down";
         messageElement.textContent = "Magnet nach unten aktiviert!";
-        sendRequestToAPI("magnet_down");
+        sendToServer("magnet_down");
     }
 }
+
 function setManualMode() {
-    if (lastcomment !== "set_manual") {
-        lastcomment = "set_manual";
+    if (lastCommand !== "set_manual") {
+        lastCommand = "set_manual";
         messageElement.textContent = "Auto wurde nach manuell umgeschaltet!";
-        sendRequestToAPI("set_manual");
+        sendToServer("set_manual");
     }
     console.log("Switched to Manual Mode");
 }
 
 function setAutomaticMode() {
-    if (lastcomment !== "set_automatic") {
-        lastcomment = "set_automatic";
+    if (lastCommand !== "set_automatic") {
+        lastCommand = "set_automatic";
         messageElement.textContent = "Auto wurde nach automatisch umgeschaltet!";
-        sendRequestToAPI("set_automatic");
+        sendToServer("set_automatic");
     }
-    console.log("Switched to Manual Mode");
+    console.log("Switched to Automatic Mode");
 }
-
-
-const keyDirections = {
-    'ArrowUp': 'forward',
-    'ArrowDown': 'backward',
-    'ArrowLeft': 'left',
-    'ArrowRight': 'right',
-    'w': 'forward',
-    's': 'backward',
-    'a': 'left',
-    'd': 'right'
-};
-
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'e') {
-        dropPackage();
-    } else if (keyDirections[event.key]) {
-        event.preventDefault();
-        controlCar(keyDirections[event.key]);
-    }
-});
-
-document.addEventListener('keyup', (event) => {
-    if (Object.keys(keyDirections).includes(event.key)) {
-        stopCar();
-    } else if (event.key === "e") {
-        stopCar();
-    }
-}); 
-
-document.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
