@@ -23,6 +23,12 @@ $_SESSION['location'] = "index.php"; ?>
 
     <h2>Steuerung</h2>
 
+    <div class="ip-container">
+        <label for="raspberryIp">Raspberry Pi IP:</label>
+        <input type="text" id="raspberryIp" placeholder="z.B. 192.168.1.100">
+        <button onclick="saveIp()">Speichern</button>
+    </div>
+
     <div class="container">
         <div class="control-message" id="message">
             Use the arrow keys (↑←↓→) or WASD to control the vehicle

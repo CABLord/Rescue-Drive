@@ -1,14 +1,34 @@
-const messageElement = document.getElementById('message');
-const apiUrl = "http://10.10.30.128:4000/control"; // Replace with your Raspberry Pi's IP and porthttp://10.10.30.128:4000/control
 let lastcomment = null; // Last sent command
 
+const messageElement = document.getElementById('message');
+let apiUrl = localStorage.getItem('raspberryIp') || "http://10.10.30.128:4000/control";
+
+// Funktion zum Speichern der IP-Adresse
+function saveIp() {
+    const ipInput = document.getElementById("raspberryIp").value.trim();
+    if (ipInput) {
+        localStorage.setItem("raspberryIp", `http://${ipInput}:4000/control`);
+        apiUrl = `http://${ipInput}:4000/control`;
+        alert("IP gespeichert: " + apiUrl);
+    } else {
+        alert("Bitte eine gültige IP-Adresse eingeben.");
+    }
+}
+
+// Falls eine IP gespeichert ist, setze den Wert im Input-Feld
+document.addEventListener("DOMContentLoaded", () => {
+    const savedIp = localStorage.getItem("raspberryIp");
+    if (savedIp) {
+        document.getElementById("raspberryIp").value = savedIp.replace("http://", "").replace(":4000/control", "");
+    }
+});
+
+// API-Anfrage mit der gespeicherten IP-Adresse
 async function sendRequestToAPI(command) {
     try {
         const response = await fetch(apiUrl, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ command })
         });
 
@@ -19,9 +39,10 @@ async function sendRequestToAPI(command) {
         const data = await response.text();
         console.log(data);
     } catch (error) {
-        console.error("Failed to send command to the Raspberry Pi:", error);
+        console.error("Failed to send command:", error);
     }
 }
+
 
 const directions = {
     'forward': 'w',
@@ -115,6 +136,6 @@ document.addEventListener('keyup', (event) => {
     } else if (event.key === "e") {
         stopCar();
     }
-});
+}); 
 
 document.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
