@@ -1,5 +1,5 @@
 const messageElement = document.getElementById('message');
-const serverApiUrl = "http://localhost:5000/control"; // Richtig: URL der REST-API auf deinem lokalen Server
+const serverApiUrl = "http://10.10.31.11:5000/control"; // Richtig: URL der REST-API auf deinem lokalen Server
 let lastCommand = null;
 
 async function sendToServer(command) {
@@ -29,7 +29,7 @@ function controlCar(direction) {
         messageElement.textContent = `The car is moving ${direction}`;
         sendToServer(direction);
     }
-}
+} 
 
 function stopCar() {
     if (lastCommand !== "stop") {

@@ -28,6 +28,10 @@
     flex-direction: row-reverse;
 }
 
+.tile img:nth-child(odd) {
+    margin-right: 20px;
+}
+
 #bauteile-container {
     display: none;
 }
