@@ -25,7 +25,10 @@ $_SESSION['location'] = "index.php"; ?>
 
     <div class="container">
         <div class="control-message" id="message">
-            Use the arrow keys (↑←↓→) or WASD to control the vehicle
+            &emsp;Use the arrow keys (↑←↓→) or WASD to control the vehicle<br>
+            &emsp;Q to turn the Car<br>
+            &emsp;E to drop a supply package<br>
+            &emsp;F to pick up
         </div>
     </div>
 
@@ -48,8 +51,8 @@ $_SESSION['location'] = "index.php"; ?>
             <i class="fas fa-arrow-down"></i>
         </button>
         <!--turn-->
-        <button class="control-btn btn-turn" onmousedown="controlCar('turn')" onmouseup="stopCar()"
-            onmouseleave="stopCar()" ontouchstart="controlCar('turn')" ontouchend="stopCar()">
+        <button class="control-btn btn-turn" onmousedown="controlCar('leftTurn')" onmouseup="stopCar()"
+            onmouseleave="stopCar()" ontouchstart="controlCar('leftTurn')" ontouchend="stopCar()">
             <i class="fas fa-undo-alt"></i>
         </button>
 
@@ -77,6 +80,10 @@ $_SESSION['location'] = "index.php"; ?>
             <span class="slider"></span>
         </label>
         <span>Automatic</span>
+    </div>
+
+    <div class="control-command" id="command">
+        Car is stopped
     </div>
 
     <!-- Footer einbinden -->
