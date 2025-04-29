@@ -249,4 +249,3 @@ Eine vorläufige Materialliste für das Projekt enthält:
 
 ---
 
-Diese README-Datei bietet eine umfassende Übersicht über das Projekt „Selbstfahrendes Auto“ und ist in verschiedene Abschnitte unterteilt, um die Navigation und das Verständnis zu erleichtern. Sie kann als Grundlage für die Dokumentation und das Management des Projekts dienen. ```markdown
